@@ -1,0 +1,64 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+
+@layer components {
+  .container {
+    @apply
+    px-[30px] sm:px-[50px] md:px-[75px] lg:px-[90px] xl:px-[110px] 2xl:px-[130px];
+  }
+
+  .slider {
+    animation: slide 30s linear infinite;
+    -webkit-animation: slide 30s ease-in-out infinite;
+  }
+
+  @keyframes slide {
+    0%, 100% {
+      background-image: url('../images/l1.webp');
+    }
+    25% {
+      background-image: url('../images/l2.webp');
+    }
+    50% {
+      background-image: url('../images/l3.webp');
+    }
+    75% {
+      background-image: url('../images/l4.webp');
+    }
+  }
+
+  .angles-d {
+    animation: top-down 5s infinite ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-animation: top-down 5s infinite ease-in-out;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+  @keyframes top-down {
+    0%, 50% , 100% {
+      bottom: 50px;
+    }
+    25%, 75% {
+      bottom: 25px;
+    }
+  }
+
+  .main-btn {
+    @apply 
+      capitalize inline-block font-bold px-8 py-4 bg-y text-b rounded-lg cursor-pointer;
+  }
+  .second-btn {
+    @apply 
+    hover:bg-y rounded-tr-lg rounded-bl-lg hover:text-b transition-all duration-700 uppercase border-2 border-[#ffe500] text-y tracking-wider inline-block font-bold px-8 py-4 cursor-pointer 
+  }
+}
